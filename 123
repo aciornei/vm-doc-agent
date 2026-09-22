@@ -1,0 +1,25 @@
+SELECT
+    id,
+    name,
+    agent_version,
+    host_hostname,
+    host_fqdn,
+    product_uuid,
+    product_uuid_legacy,
+    machine_id,
+    last_advertised_ip,
+    last_registration_ip
+FROM agents
+ORDER BY id DESC
+LIMIT 10;
+
+SELECT
+    id,
+    name,
+    bios_uuid,
+    bios_uuid_normalized,
+    agent_id,
+    present_in_vcenter,
+    last_vcenter_sync_at
+FROM virtual_machines
+WHERE name LIKE '%server01%';
